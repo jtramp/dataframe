@@ -39,7 +39,7 @@ protobuf==3.20.3
 pyarrow==8.0.0
 
 pyasn1-modules==0.2.8
-numpy==1.18.1
+numpy==1.20.*
 plotly
 PyQt5-sip==12.11.0
 python-lsp-jsonrpc==1.0.0
