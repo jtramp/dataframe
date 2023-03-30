@@ -9,7 +9,6 @@ brotlipy==0.7.0
 clyent==1.2.1
 constantly==15.1.0
 cssselect==1.1.0
-datashape==0.5.2
 
 et-xmlfile==1.1.0
 
@@ -29,7 +28,7 @@ mypy-extensions==0.4.3
 
 openpyxl==3.0.10
 
-pandas==1.5.3
+pandas==1.5.*
 
 Pillow==9.4.0
 
