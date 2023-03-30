@@ -44,7 +44,7 @@ plotly
 PyQt5-sip==12.11.0
 python-lsp-jsonrpc==1.0.0
 scipy==1.10.0
-streamlit==1.1.*
+streamlit==1.20.0
 torch==1.12.1
 xlrd==2.0.1
 zict==2.1.0
