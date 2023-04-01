@@ -103,3 +103,48 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                 df = df[df[column].isin(user_cat_input)]
 
     return df
+
+
+
+
+
+def filter_dataframe2(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Adds a UI on top of a dataframe to let viewers filter columns
+    Args:
+        df (pd.DataFrame): Original dataframe
+    Returns:
+        pd.DataFrame: Filtered dataframe
+    """
+    modify = st.checkbox("Filter Dataframe by Occupation Group")
+
+    if not modify:
+        return df
+
+    df = df.copy()
+
+    # Try to convert datetimes into a standard format (datetime, no timezone)
+    for col in df.columns:
+        if is_object_dtype(df[col]):
+            try:
+                df[col] = pd.to_datetime(df[col])
+            except Exception:
+                pass
+
+        if is_datetime64_any_dtype(df[col]):
+            df[col] = df[col].dt.tz_localize(None)
+
+    modification_container = st.container()
+    with modification_container:
+        left, right = st.columns((1, 20))  # Move the definition of `right` outside the loop
+
+        column = "Onet"
+        left.write("↳")
+        user_cat_input = right.multiselect(
+            f"Values for {column}",
+            df[column].unique(),
+            default=list(df[column].unique()),
+        )
+        df = df[df[column].isin(user_cat_input)]
+
+    return df
