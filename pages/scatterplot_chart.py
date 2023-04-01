@@ -7,7 +7,8 @@ import plotly.express as px  # pip install plotly-express
 from streamlit_app import dfg
 
 st.title("2031 Occupations Scatterplot")
-st.markdown("##")
+st.subheader('Hover on chart and click the double arrows to Fullscreen')
+# st.markdown("##")
 fig = px.scatter(
     dfg,
     x="Median Annual Wage 2021",
@@ -15,11 +16,12 @@ fig = px.scatter(
     y="Employment_Percent_Change_2021_2031",
     size="Occupational Openings, 2021-2031 Annual Average",
     color="Onet",
+    opacity = .7,
     labels={'Median Annual Wage 2021': 'Median Wage', 'Employment_Percent_Change_2021_2031':'% Change'},
     hover_data=['Onet']
 )
-fig.update_traces(textposition='top left')
-fig.update_layout(width=1000, height=800)
+fig.update_traces(textposition='top center')
+fig.update_layout(width=800, height=600)
 
 # Show the chart
 # fig.show()

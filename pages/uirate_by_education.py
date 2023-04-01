@@ -7,6 +7,8 @@ import plotly.express as px  # pip install plotly-express
 from streamlit_app import dfeduc
 
 
+
+st.title('Unemployment by Education')
 fig = px.area(dfeduc, x="Month", y="Unemployment_Rate", color="Education",
               labels={"Month": "Years", "Unemployment_Rate": "Unemployment Rate", "Education": "Education Level"},
               title="Unemployment Rate by Education Level over Time",

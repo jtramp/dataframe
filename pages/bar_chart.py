@@ -6,7 +6,9 @@ import streamlit as st
 import plotly.express as px  # pip install plotly-express
 from filter_func import filter_dataframe
 from streamlit_app import dfb
-st.title("Education")
+
+
+st.title("Education and Employment Growth")
 st.markdown("##")
 fig1 = px.bar(dfb, x="Typical_Entry_Level_Education", y="Employment_Percent_Change_2021_2031",
              color="Typical_Entry_Level_Education",
